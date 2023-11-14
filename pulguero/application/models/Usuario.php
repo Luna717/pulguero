@@ -20,13 +20,21 @@ class Usuario extends CI_Model {
         return $query->result();
     }
 
-
-    public function usuarios_empresa() {
+    public function usuariosEmpresa() {
         $this->db->select();
         $this->db->from($this->table);
-    
-        // Añadir condición WHERE para el rol
+        
         $this->db->where_in('rol', ['Admin', 'Supervisor']);
+    
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function usuariosCliente() {
+        $this->db->select();
+        $this->db->from($this->table);
+        
+        $this->db->where_in('rol', ['Cliente', 'Vendedor']);
     
         $query = $this->db->get();
         return $query->result();
@@ -83,6 +91,26 @@ class Usuario extends CI_Model {
 
 
     public function obtenerUsuariosInactivos() {
+        $this->db->select();
+        $this->db->from($this->table);
+        $this->db->where_in('rol', ['Cliente', 'Vendedor']);
+        $this->db->where('status_user', 0);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function obtenerUsuariosClientesActivos() {
+        $this->db->select();
+        $this->db->from($this->table);
+        $this->db->where_in('rol', ['Cliente', 'Vendedor']);
+        $this->db->where('status_user', 1);
+    
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+
+    public function obtenerUsuariosClientesInactivos() {
         $this->db->select();
         $this->db->from($this->table);
         $this->db->where('status_user', 0);

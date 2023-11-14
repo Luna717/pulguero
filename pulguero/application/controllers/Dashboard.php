@@ -15,10 +15,7 @@ class Dashboard extends CI_Controller {
 
     public function dashboard() {
         if ($this->session->userdata('id_usuario')) {
-            $data["nombre_usuario"] = $this->session->userdata('nombres');
-            $data["rol_usuario"] = $this->session->userdata('rol');
-            $this->load->view('Dashboard/dashboard', $data);
-           
+            $this->load->view('Dashboard/dashboard');
         } else {
             redirect(site_url('Dashboard/login'));
         }

@@ -7,27 +7,29 @@
     <title>Corona Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.3.67/css/materialdesignicons.min.css" integrity="sha512-nRzny9w0V2Y1/APe+iEhKAwGAc+K8QYCw4vJek3zXhdn92HtKt226zHs9id8eUq+uYJKaH2gPyuLcaG/dE5c7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.15.0/css/flag-icons.min.css" integrity="sha512-bZBu2H0+FGFz/stDN/L0k8J0G8qVsAL0ht1qg5kTwtAheiXwiRKyCq1frwfbSFSJN3jooR5kauE0YjtPzhZtJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- endinject -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/owl-carousel-2/owl.theme.default.min.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="<?php echo base_url();?>assets/images/favicon.png" />
-  </head>
+  </head> 
   <body>
     <div class="container-scroller">
-      <!-- partial:<?php echo base_url();?>partials/_sidebar.html -->
+      <!-- partial:../../partials/_sidebar.html -->
       <?php $this->load->view('Dashboard/sidebar'); ?>
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
-        <!-- partial:<?php echo base_url();?>partials/_navbar.html -->
+        <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="<?php echo base_url();?>index.html"><img src="<?php echo base_url();?>assets/images/logo-mini.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="<?php echo base_url();?>../../index.html"><img src="<?php echo base_url();?>assets/images/logo-mini.svg" alt="logo" /></a>
           </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -42,7 +44,7 @@
             </ul>
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item dropdown d-none d-lg-block">
-                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
+                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="<?php echo base_url();?>#">+ Create New Project</a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
                   <h6 class="p-3 mb-0">Projects</h6>
                   <div class="dropdown-divider"></div>
@@ -83,12 +85,12 @@
                 </div>
               </li>
               <li class="nav-item nav-settings d-none d-lg-block">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?php echo base_url();?>#">
                   <i class="mdi mdi-view-grid"></i>
                 </a>
               </li>
               <li class="nav-item dropdown border-left">
-                <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="<?php echo base_url();?>#" data-toggle="dropdown" aria-expanded="false">
                   <i class="mdi mdi-email"></i>
                   <span class="count bg-success"></span>
                 </a>
@@ -129,7 +131,7 @@
                 </div>
               </li>
               <li class="nav-item dropdown border-left">
-                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="<?php echo base_url();?>#" data-toggle="dropdown">
                   <i class="mdi mdi-bell"></i>
                   <span class="count bg-danger"></span>
                 </a>
@@ -176,7 +178,7 @@
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                <a class="nav-link" id="profileDropdown" href="<?php echo base_url();?>#" data-toggle="dropdown">
                   <div class="navbar-profile">
                     <img class="img-xs rounded-circle" src="<?php echo base_url();?>assets/images/faces/face15.jpg" alt="">
                     <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
@@ -218,60 +220,95 @@
           </div>
         </nav>
         <!-- partial -->
-              
-              <div class="col-lg-12 grid-margin stretch-card">
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Formulario Usuario </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="<?php echo base_url();?>#">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="table table-striped mt-5">
-                        <thead>
-                        <tr>
-                            <th> <a class="badge badge-primary" href="http://[::1]/pulguero/index.php/Usuarios/listadoUsuarios">todos</a> </th>
-                            <th> <a class="badge badge-primary" href="http://[::1]/pulguero/index.php/Usuarios/listadoUsuarios/1">Activos</a>  </th>
-                            <th> <a class="badge badge-primary" href="http://[::1]/pulguero/index.php/Usuarios/listadoUsuarios/0">Inactivos</a> </th>
-                          </tr>
-                          <tr>
-                            <th> logo </th>
-                            <th> id </th>
-                            <th> documento </th>
-                            <th> nombre </th>
-                            <th> acumulado </th>
-                            <th> telefono </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach ($usuarios as $key => $usuario): ?>
-                          <tr>
-                            <td class="py-1">
-                              <img src="<?php echo base_url();?>assets/images/faces-clipart/pic-1.png" alt="image" />
-                            </td>
-                            <td><?= $usuario->id_user;?></td>
-                            <td><?= $usuario->document_number;?></td>
-                            <td><?= $usuario->user_name;?></td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td><?= $usuario->cellphone;?></td>
-                            <td><a class="badge badge-primary" href="http://[::1]/pulguero/index.php/Usuarios/register/<?php echo $usuario->id_user;?>">Editar</a></td>
-                            <td><a class="badge badge-danger" href="http://[::1]/pulguero/index.php/Usuarios/borrar/<?php echo $usuario->id_user;?>">Eliminar</a></td>
-                          </tr>
-                        <?php endforeach; ?>
-                        </tbody>
-                      </table>
-                    </div>
+                    <h4 class="card-title">Complete los siguientes datos para crear un usuario</h4>
+                    <!-- <p class="card-description"> Basic form layout </p> -->
+                    <br>
+                    <?php echo form_open('');?>
+                      <div class="form-group">
+                      <?php
+                        echo form_label('Usuario', 'usuario');
+                        $options = array();
+                        foreach ($usuarios as $usuario) {
+                            $options[$usuario->id_user] = "CC: ".$usuario->document_number." -> Nombre: ".$usuario->user_name;
+                        }
+                        
+
+                        echo form_dropdown('id_user', $options, 'large', 'class="form-control"');
+                      ?>
+                      <?php
+                        echo form_label('Categoria', 'categoria');
+                        $options = array();
+                        foreach ($categorias as $categoria) {
+                            $options[$categoria->id_category] = "Nombre: ".$categoria->	category_name;
+                        }
+                        
+
+                        echo form_dropdown('id_category', $options, 'large', 'class="form-control"');
+                      ?>
+                      <?php
+                              echo form_label('Costo', 'costo');
+
+                              $data = [
+                                  'name'      => 'cost',
+                                  'value'     => '',
+                                  'placeholder' => 'Ingrese el costo',
+                                  'type'     => 'number',
+                                  'class'     => 'form-control input-lg', 
+                              ];
+                              echo form_input($data);
+                        ?>
+                        <?php
+                              echo form_label('Precio', 'precio');
+
+                              $data = [
+                                  'name'      => 'price',
+                                  'value'     => '',
+                                  'placeholder' => 'Ingrese el precio',
+                                  'type'     => 'number',
+                                  'class'     => 'form-control input-lg', 
+                              ];
+                              echo form_input($data);
+                        ?>
+                      </div>
+                      <?php 
+                          $data = array(
+                              'name' => 'mysubmit',
+                              'id'  =>  'boton',
+                              'type' => 'submit',
+                              'class' => 'btn btn-primary mt-2',
+                              'content' => '!enviar'
+                          );
+                          echo form_button($data)
+                      ?> 
+
+
+                  <?php echo form_close();?>
                   </div>
                 </div>
               </div>
-            </div>
+              
           </div>
           <!-- content-wrapper ends -->
-          <!-- partial:<?php echo base_url();?>partials/_footer.html -->
+          <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="<?php echo base_url();?>https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
             </div>
           </footer>
           <!-- partial -->
@@ -285,6 +322,8 @@
     <script src="<?php echo base_url();?>assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
+    <script src="<?php echo base_url();?>assets/vendors/select2/select2.min.js"></script>
+    <script src="<?php echo base_url();?>assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="<?php echo base_url();?>assets/js/off-canvas.js"></script>
@@ -294,6 +333,9 @@
     <script src="<?php echo base_url();?>assets/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
+    <script src="<?php echo base_url();?>assets/js/file-upload.js"></script>
+    <script src="<?php echo base_url();?>assets/js/typeahead.js"></script>
+    <script src="<?php echo base_url();?>assets/js/select2.js"></script>
     <!-- End custom js for this page -->
   </body>
 </html>

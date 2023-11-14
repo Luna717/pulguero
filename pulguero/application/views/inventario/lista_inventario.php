@@ -225,37 +225,29 @@
                     <div class="table-responsive">
                       <table class="table table-striped mt-5">
                         <thead>
-                        <tr>
-                            <th> <a class="badge badge-primary" href="http://[::1]/pulguero/index.php/Usuarios/listadoUsuarios">todos</a> </th>
-                            <th> <a class="badge badge-primary" href="http://[::1]/pulguero/index.php/Usuarios/listadoUsuarios/1">Activos</a>  </th>
-                            <th> <a class="badge badge-primary" href="http://[::1]/pulguero/index.php/Usuarios/listadoUsuarios/0">Inactivos</a> </th>
-                          </tr>
                           <tr>
                             <th> logo </th>
                             <th> id </th>
-                            <th> documento </th>
-                            <th> nombre </th>
-                            <th> acumulado </th>
-                            <th> telefono </th>
+                            <th> id_usuario name </th>
+                            <th> id_categoria </th>
+                            <th> costo </th>
+                            <th> precio </th>
+                            <th> estado </th>
                           </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($usuarios as $key => $usuario): ?>
+                        <?php foreach ($inventarios as $key => $inventario): ?>
                           <tr>
                             <td class="py-1">
                               <img src="<?php echo base_url();?>assets/images/faces-clipart/pic-1.png" alt="image" />
                             </td>
-                            <td><?= $usuario->id_user;?></td>
-                            <td><?= $usuario->document_number;?></td>
-                            <td><?= $usuario->user_name;?></td>
-                            <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td><?= $usuario->cellphone;?></td>
-                            <td><a class="badge badge-primary" href="http://[::1]/pulguero/index.php/Usuarios/register/<?php echo $usuario->id_user;?>">Editar</a></td>
-                            <td><a class="badge badge-danger" href="http://[::1]/pulguero/index.php/Usuarios/borrar/<?php echo $usuario->id_user;?>">Eliminar</a></td>
+                            <td><?= $inventario->id_inventory;?></td>
+                            <td><?= $inventario->id_user;?></td>
+                            <td><?= $inventario->id_category;?></td>
+                            <td><?= $inventario->cost;?></td>
+                            <td><?= $inventario->price;?></td>
+                            <td><?= $inventario->status_inventory;?></td>
+
                           </tr>
                         <?php endforeach; ?>
                         </tbody>

@@ -63,9 +63,9 @@
     }
     if ($("#transaction-history").length) {
       var areaData = {
-        labels: ["Vestidos", "Pañaleras","Medias"],
+        labels: ["Paypal", "Stripe","Cash"],
         datasets: [{
-            data: [236, 593, 120],
+            data: [55, 25, 20],
             backgroundColor: [
               "#111111","#00d25b","#ffab00"
             ]
@@ -102,7 +102,7 @@
           ctx.textBaseline = "middle";
           ctx.fillStyle = "#ffffff";
       
-          var text = "$949", 
+          var text = "$1200", 
               textX = Math.round((width - ctx.measureText(text).width) / 2),
               textY = height / 2.4;
       
@@ -133,9 +133,9 @@
     }
     if ($("#transaction-history-arabic").length) {
       var areaData = {
-        labels: ["Vestidos", "Pañaleras","Medias"],
+        labels: ["Paypal", "Stripe","Cash"],
         datasets: [{
-            data: [236, 593, 120],
+            data: [55, 25, 20],
             backgroundColor: [
               "#111111","#00d25b","#ffab00"
             ]

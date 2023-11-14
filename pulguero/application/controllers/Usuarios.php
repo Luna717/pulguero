@@ -17,7 +17,25 @@ class Usuarios extends CI_Controller {
     {
         if ($this->session->userdata('id_usuario')) {
             if($this->session->userdata('rol') == 'Admin'){
-                $vdata["usuarios"] = $this->Usuario->findAll();
+                if($user_estado == null){
+                    $vdata["usuarios"] = $this->Usuario->findAll();
+                }elseif ($user_estado == 1) {
+                    $vdata["usuarios"] = $this->Usuario->obtenerUsuariosActivos();    
+                }elseif ($user_estado == 0) {
+                    $vdata["usuarios"] = $this->Usuario->obtenerUsuariosInactivos(); 
+                }
+                
+                $this->load->view('usuario/listadoUsuarios', $vdata);
+            }elseif($this->session->userdata('rol') == 'SuperVisor'){
+                
+                if($user_estado == null){
+                    $vdata["usuarios"] = $this->Usuario->usuariosCliente();
+                }elseif ($user_estado == 1) {
+                    $vdata["usuarios"] = $this->Usuario->obtenerUsuariosClientesActivos();    
+                }elseif ($user_estado == 0) {
+                    $vdata["usuarios"] = $this->Usuario->obtenerUsuariosClientesInactivos(); 
+                }
+                
                 $this->load->view('usuario/listadoUsuarios', $vdata);
             }else{
                 redirect(site_url('Dashboard/dashboard'));
@@ -121,7 +139,7 @@ class Usuarios extends CI_Controller {
                         return;
                     }
                 }else{
-                    $vdata["usuarios"] = $this->Usuario->usuarios_empresa();
+                    $vdata["usuarios"] = $this->Usuario->usuariosEmpresa();
                     $this->load->view('Dashboard/crear_cuenta' , $vdata);
                 }
             }else{

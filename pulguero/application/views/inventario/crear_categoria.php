@@ -241,23 +241,13 @@
                     <?php echo form_open('');?>
                       <div class="form-group">
                       <?php
-                        echo form_label('Usuario', 'usuario');
-                        $options = array();
-                        foreach ($usuarios as $usuario) {
-                            $options[$usuario->id_user] = "CC: ".$usuario->document_number." -> Nombre: ".$usuario->user_name;
-                        }
-                        
-
-                        echo form_dropdown('id_user', $options, 'large', 'class="form-control"');
-                      ?>
-                      <?php
-                              echo form_label('Contraseña', 'contrasena');
+                              echo form_label('Categoria', 'categoria');
 
                               $data = [
-                                  'name'      => 'password',
+                                  'name'      => 'category_name',
                                   'value'     => '',
-                                  'placeholder' => 'Ingrese la contraseña',
-                                  'type'     => 'number',
+                                  'placeholder' => 'Ingrese la categoria',
+                                  'type'     => 'text',
                                   'class'     => 'form-control input-lg', 
                               ];
                               echo form_input($data);
